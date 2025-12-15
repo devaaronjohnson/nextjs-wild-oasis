@@ -1,26 +1,127 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary-50: #e1e8ef;
+    --color-primary-100: #d4dee7;
+    --color-primary-200: #b7c7d7;
+    --color-primary-300: #99b0c7;
+    --color-primary-400: #7c99b6;
+    --color-primary-500: #5e82a6;
+    --color-primary-600: #4c6b8a;
+    --color-primary-700: #3c546c;
+    --color-primary-800: #2c3d4f;
+    --color-primary-900: #1b2631;
+    --color-primary-950: #141c24;
+    --color-accent-50: #faf5f0;
+    --color-accent-100: #f4ece1;
+    --color-accent-200: #e8d6bf;
+    --color-accent-300: #ddc2a2;
+    --color-accent-400: #d2af84;
+    --color-accent-500: #c69963;
+    --color-accent-600: #b78343;
+    --color-accent-700: #926835;
+    --color-accent-800: #6c4d28;
+    --color-accent-900: #4b351b;
+    --color-accent-950: #382814;
+
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    /*background: var(--background);*/
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+    .spinner {
+        margin: 3.2rem auto 1.6rem;
+        width: 60px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 8px solid theme("colors.primary.900");
+        border-right-color: theme("colors.primary.200");
+        animation: rotate 1s infinite linear;
+    }
+
+    .spinner-mini {
+        margin: 0;
+        width: 20px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 2px solid theme("colors.primary.200");
+        border-right-color: transparent;
+        animation: rotate 1s infinite linear;
+    }
+
+    @keyframes rotate {
+        to {
+            transform: rotate(1turn);
+        }
+    }
+}
+
+/* For data picker */
+
+.rdp {
+    --rdp-cell-size: 32px !important;
+    --rdp-accent-color: #c69963 !important;
+    --rdp-background-color: #b78343 !important;
+    margin: 0 !important;
+}
+
+.rdp-day_button {
+    color: #fff !important;
+}
+.rdp-day {
+    width: 32px !important;
+    height: 32px !important;
+}
+.rdp-selected .rdp-day_button {
+    background-color: #b78343 !important;
+    border-color: #b78343 !important;
+}
+.rdp-day.rdp-selected.rdp-range_start {
+    background: #b78343 !important;
+    border-top-left-radius: 100% !important;
+    border-bottom-left-radius: 100% !important;
+}
+.rdp-day.rdp-selected.rdp-range_end {
+    background: #b78343 !important;
+    border-top-right-radius: 100% !important;
+    border-bottom-right-radius: 100% !important;
+}
+.rdp-range_start .rdp-day_button {
+    background-color: #b78343 !important;
+}
+.rdp-range_end .rdp-day_button {
+    background-color: #b78343 !important;
+}
+.rdp-selected.rdp-range_middle {
+    background-color: #b78343 !important;
+}
+.rdp-range-start_background {
+    background-color: #b78343 !important;
+}
+.rdp-months {
+    flex-wrap: unset !important;
+}
+
+.container_xl {
+    @apply w-full max-w-7xl mx-auto;
 }
