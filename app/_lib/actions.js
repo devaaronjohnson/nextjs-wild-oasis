@@ -53,7 +53,7 @@ export async function createBooking(bookingData, formData) {
     redirect("/cabins/thankyou");
 }
 
-export async function deleteBooking(bookingId) {
+export async function deleteReservation(bookingId) {
     const session = await auth();
     if (!session) throw new Error("You must be logged in");
 
@@ -68,7 +68,9 @@ export async function deleteBooking(bookingId) {
         .delete()
         .eq("id", bookingId);
 
-    if (error) throw new Error("Booking could not be deleted");
+    if (error) {
+        throw new Error("Booking could not be deleted");
+    }
 
     revalidatePath("/account/reservations");
 }
