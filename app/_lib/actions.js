@@ -50,7 +50,7 @@ export async function createBooking(bookingData, formData) {
 
     revalidatePath(`/cabins/${bookingData.cabinId}`);
 
-    redirect("/cabins/thankyou");
+    redirect("/cabins/thank-you");
 }
 
 export async function deleteBooking(bookingId) {
@@ -68,7 +68,9 @@ export async function deleteBooking(bookingId) {
         .delete()
         .eq("id", bookingId);
 
-    if (error) throw new Error("Booking could not be deleted");
+    if (error) {
+        throw new Error("Booking could not be deleted");
+    }
 
     revalidatePath("/account/reservations");
 }

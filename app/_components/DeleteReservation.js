@@ -3,6 +3,7 @@
 import { TrashIcon } from "@heroicons/react/24/solid";
 import { useTransition } from "react";
 import SpinnerMini from "@/app/_components/SpinnerMini";
+// import { deleteReservation } from "@/app/_lib/actions";
 
 function DeleteReservation({ bookingId, onDelete }) {
     const [isPending, startTransition] = useTransition();
@@ -15,7 +16,7 @@ function DeleteReservation({ bookingId, onDelete }) {
     return (
         <button
             onClick={handleDelete}
-            className="group flex items-center gap-2 uppercase text-xs font-bold text-primary-300 grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900"
+            className="group flex items-center gap-2 uppercase text-xs font-bold text-primary-300 grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900 cursor-pointer"
         >
             {!isPending ? (
                 <>
