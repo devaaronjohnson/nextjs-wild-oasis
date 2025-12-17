@@ -11,24 +11,24 @@ function ReservationForm({ cabin, user }) {
     const { range, resetRange } = useReservation();
     const { maxCapacity, regularPrice, discount, id } = cabin;
 
-    // const startDate = range.from;
-    // const endDate = range.to;
+    const startDate = range.from;
+    const endDate = range.to;
 
-    // const numNights = differenceInDays(endDate, startDate);
-    // const cabinPrice = numNights * (regularPrice - discount);
+    const numNights = differenceInDays(endDate, startDate);
+    const cabinPrice = numNights * (regularPrice - discount);
 
-    // const bookingData = {
-    //     startDate,
-    //     endDate,
-    //     numNights,
-    //     cabinPrice,
-    //     cabinId: id,
-    // };
+    const bookingData = {
+        startDate,
+        endDate,
+        numNights,
+        cabinPrice,
+        cabinId: id,
+    };
 
-    // const createBookingWithData = createBooking.bind(null, bookingData);
+    const createBookingWithData = createBooking.bind(null, bookingData);
 
     return (
-        <div className="scale-[1.01]">
+        <div className="scale-[1.0] bg-primary-900">
             <div className="bg-primary-800 text-primary-300 px-16 py-2 flex justify-between items-center">
                 <p>Logged in as</p>
 
@@ -56,11 +56,13 @@ function ReservationForm({ cabin, user }) {
                 className="bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col"
             >
                 <div className="space-y-2">
-                    <label htmlFor="numGuests">How many guests?</label>
+                    <label htmlFor="numGuests" className="text-white">
+                        How many guests?
+                    </label>
                     <select
                         name="numGuests"
                         id="numGuests"
-                        className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+                        className="px-5 pt-4 pb-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
                         required
                     >
                         <option value="" key="">
@@ -78,7 +80,7 @@ function ReservationForm({ cabin, user }) {
                 </div>
 
                 <div className="space-y-2">
-                    <label htmlFor="observations">
+                    <label htmlFor="observations" className="text-white">
                         Anything we should know about your stay?
                     </label>
                     <textarea
@@ -90,7 +92,7 @@ function ReservationForm({ cabin, user }) {
                 </div>
 
                 <div className="flex justify-end items-center gap-6">
-                    {/* {!(startDate && endDate) ? (
+                    {!(startDate && endDate) ? (
                         <p className="text-primary-300 text-base">
                             Start by selecting dates
                         </p>
@@ -98,7 +100,7 @@ function ReservationForm({ cabin, user }) {
                         <SubmitButton pendingLabel="Reserving...">
                             Reserve now
                         </SubmitButton>
-                    )}*/}
+                    )}
                 </div>
             </form>
         </div>

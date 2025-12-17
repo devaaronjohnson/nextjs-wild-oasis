@@ -7,8 +7,6 @@ import { updateGuest } from "@/app/_lib/actions";
 import { useFormStatus } from "react-dom";
 
 export function UpdateProfileForm({ guest, children }) {
-    // const [count, setCount] = useState();
-
     const { fullName, email, nationality, nationalID, countryFlag } = guest;
 
     return (
