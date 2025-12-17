@@ -88,6 +88,10 @@ body {
 .rdp-day_button {
     color: #fff !important;
 }
+.rdp-day_button:hover {
+    background-color: #b78343;
+    color: #fff !important;
+}
 .rdp-day {
     width: 32px !important;
     height: 32px !important;
@@ -120,6 +124,15 @@ body {
 }
 .rdp-months {
     flex-wrap: unset !important;
+}
+.rdp-caption_label {
+    color: #fff !important;
+}
+.rdp-chevron {
+    fill: #fff !important;
+}
+.rdp-month_caption {
+    justify-content: center;
 }
 
 .container_xl {

@@ -28,7 +28,7 @@ function ReservationForm({ cabin, user }) {
     // const createBookingWithData = createBooking.bind(null, bookingData);
 
     return (
-        <div className="scale-[1.01]">
+        <div className="scale-[1.0] bg-primary-900">
             <div className="bg-primary-800 text-primary-300 px-16 py-2 flex justify-between items-center">
                 <p>Logged in as</p>
 
@@ -56,11 +56,13 @@ function ReservationForm({ cabin, user }) {
                 className="bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col"
             >
                 <div className="space-y-2">
-                    <label htmlFor="numGuests">How many guests?</label>
+                    <label htmlFor="numGuests" className="text-white">
+                        How many guests?
+                    </label>
                     <select
                         name="numGuests"
                         id="numGuests"
-                        className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+                        className="px-5 pt-4 pb-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
                         required
                     >
                         <option value="" key="">
@@ -78,7 +80,7 @@ function ReservationForm({ cabin, user }) {
                 </div>
 
                 <div className="space-y-2">
-                    <label htmlFor="observations">
+                    <label htmlFor="observations" className="text-white">
                         Anything we should know about your stay?
                     </label>
                     <textarea
