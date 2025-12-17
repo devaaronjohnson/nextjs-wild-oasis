@@ -11,21 +11,21 @@ function ReservationForm({ cabin, user }) {
     const { range, resetRange } = useReservation();
     const { maxCapacity, regularPrice, discount, id } = cabin;
 
-    // const startDate = range.from;
-    // const endDate = range.to;
+    const startDate = range.from;
+    const endDate = range.to;
 
-    // const numNights = differenceInDays(endDate, startDate);
-    // const cabinPrice = numNights * (regularPrice - discount);
+    const numNights = differenceInDays(endDate, startDate);
+    const cabinPrice = numNights * (regularPrice - discount);
 
-    // const bookingData = {
-    //     startDate,
-    //     endDate,
-    //     numNights,
-    //     cabinPrice,
-    //     cabinId: id,
-    // };
+    const bookingData = {
+        startDate,
+        endDate,
+        numNights,
+        cabinPrice,
+        cabinId: id,
+    };
 
-    // const createBookingWithData = createBooking.bind(null, bookingData);
+    const createBookingWithData = createBooking.bind(null, bookingData);
 
     return (
         <div className="scale-[1.0] bg-primary-900">
@@ -92,7 +92,7 @@ function ReservationForm({ cabin, user }) {
                 </div>
 
                 <div className="flex justify-end items-center gap-6">
-                    {/* {!(startDate && endDate) ? (
+                    {!(startDate && endDate) ? (
                         <p className="text-primary-300 text-base">
                             Start by selecting dates
                         </p>
@@ -100,7 +100,7 @@ function ReservationForm({ cabin, user }) {
                         <SubmitButton pendingLabel="Reserving...">
                             Reserve now
                         </SubmitButton>
-                    )}*/}
+                    )}
                 </div>
             </form>
         </div>

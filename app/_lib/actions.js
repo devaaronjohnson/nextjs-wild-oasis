@@ -50,10 +50,10 @@ export async function createBooking(bookingData, formData) {
 
     revalidatePath(`/cabins/${bookingData.cabinId}`);
 
-    redirect("/cabins/thankyou");
+    redirect("/cabins/thank-you");
 }
 
-export async function deleteReservation(bookingId) {
+export async function deleteBooking(bookingId) {
     const session = await auth();
     if (!session) throw new Error("You must be logged in");
 
