@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import MobileMenuButton from "@/app/_components/MobileMenuButton";
 import { auth } from "@/app/_lib/auth";
 import "@/app/globals.css";
 
@@ -9,7 +10,7 @@ export default async function Navigation() {
 
     return (
         <nav className="z-10 text-xl">
-            <ul className="flex gap-16 items-center">
+            <ul className="gap-16 items-center hidden lg:flex">
                 <li>
                     <Link
                         href="/cabins"
@@ -49,15 +50,8 @@ export default async function Navigation() {
                         </Link>
                     )}
                 </li>
-                {/* <li>
-                    <Link
-                        href="/account"
-                        className="hover:text-accent-400 transition-colors text-white"
-                    >
-                        Guest Area
-                    </Link>
-                </li>*/}
             </ul>
+            <MobileMenuButton />
         </nav>
     );
 }
