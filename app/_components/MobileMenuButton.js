@@ -25,7 +25,7 @@ export default function MobileMenuButton() {
 
             {/* Slide-in Menu */}
             <div
-                className={`fixed top-0 right-0 h-full w-full bg-primary-950 text-white z-50
+                className={`fixed top-0 right-0 h-full w-full bg-primary-950 text-white z-[999999999999999999]
                       transform transition-transform duration-300 ease-in-out
                       ${open ? "translate-x-0" : "translate-x-full"}`}
             >
