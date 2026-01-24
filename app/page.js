@@ -14,7 +14,7 @@ export default function Page() {
                 quality={80}
             />
 
-            <div className="relative z-10 text-center mt-10">
+            <div className="relative z-0 lg:z-10 text-center mt-10">
                 <h1 className="relative text-5xl lg:text-8xl text-primary-50 mb-10 tracking-tight font-normal">
                     Welcome to paradise.
                 </h1>
