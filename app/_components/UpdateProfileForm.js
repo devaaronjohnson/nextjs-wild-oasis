@@ -11,7 +11,7 @@ export function UpdateProfileForm({ guest, children }) {
 
     return (
         <form
-            className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col"
+            className="bg-primary-900 py-8 px-5 lg:px-12 text-lg flex gap-6 flex-col"
             action={updateGuest}
         >
             <div className="space-y-2">
