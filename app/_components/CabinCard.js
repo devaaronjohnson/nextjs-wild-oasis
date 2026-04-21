@@ -42,7 +42,7 @@ function CabinCard({ cabin }) {
                                 </span>
                             </>
                         ) : (
-                            <span className="text-3xl font-[350]">
+                            <span className="text-3xl font-[350] text-white">
                                 ${regularPrice}
                             </span>
                         )}
