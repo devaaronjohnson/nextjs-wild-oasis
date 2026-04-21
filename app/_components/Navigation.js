@@ -6,7 +6,7 @@ import "@/app/globals.css";
 
 export default async function Navigation() {
     const session = await auth();
-    // console.log("Session: ", session);
+    // console.log("Session: ", session);Header
 
     return (
         <nav className="z-10 text-xl">
